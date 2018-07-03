@@ -1,0 +1,5 @@
+/* compilation ES5 to ES6 */
+/* use package REACT */
+{
+  "presets": ["latest", "react"]
+}
