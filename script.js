@@ -93,7 +93,7 @@ class StopWatch extends React.Component {
           {this.format(this.state.times)}
         </div>
         <ul className={'results'}>
-          {this.state.times}
+          
         </ul>
       </div>
     );

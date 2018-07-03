@@ -94,6 +94,7 @@ var StopWatch = function (_React$Component) {
   }, {
     key: 'addList',
     value: function addList() {
+      // this.setState.push(this.times);
       console.log(this.state.times);
     }
   }, {
@@ -112,7 +113,11 @@ var StopWatch = function (_React$Component) {
 
   }, {
     key: 'resetOneElementOfTheList',
-    value: function resetOneElementOfTheList() {}
+    value: function resetOneElementOfTheList() {
+      this.state = {
+        result: []
+      };
+    }
   }, {
     key: 'render',
     value: function render() {
@@ -165,11 +170,7 @@ var StopWatch = function (_React$Component) {
           { className: 'stopwatch' },
           this.format(this.state.times)
         ),
-        React.createElement(
-          'ul',
-          { className: 'results' },
-          this.state.times
-        )
+        React.createElement('ul', { className: 'results' })
       );
     }
   }]);
