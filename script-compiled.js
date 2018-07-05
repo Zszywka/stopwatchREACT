@@ -87,7 +87,7 @@ var StopWatch = function (_React$Component) {
       if (this.state.running) {
         this.addList();
       };
-      // this.addToList(this.format(this.times))}; ???
+      // this.addToList(this.format(this.state.times))}; wtedy dziala
       this.state.running = false;
       clearInterval(this.watch);
     }
@@ -113,7 +113,12 @@ var StopWatch = function (_React$Component) {
 
   }, {
     key: 'resetOneElementOfTheList',
-    value: function resetOneElementOfTheList(index) {}
+    value: function resetOneElementOfTheList() {
+      console.log(this.state.results);
+      var res = this.state.results;
+      res.pop();
+      this.setState({ results: res });
+    }
   }, {
     key: 'render',
     value: function render() {
@@ -156,7 +161,7 @@ var StopWatch = function (_React$Component) {
           React.createElement(
             'a',
             { href: '#', className: 'button', id: 'resetOneElementOfTheList', onClick: function onClick() {
-                return _this3.resetOneElementOfTheList(index);
+                return _this3.resetOneElementOfTheList();
               } },
             'ResetOne'
           )
