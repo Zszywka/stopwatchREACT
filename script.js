@@ -52,14 +52,15 @@ class StopWatch extends React.Component {
   }
   stop() {
     if (this.state.running) {
-      this.addList()};
+      this.addList()
+    };
       // this.addToList(this.format(this.times))}; ???
     this.state.running = false;
     clearInterval(this.watch);
   }
   addList() {
-    // this.setState.push(this.times);
-    console.log(this.state.times);
+    this.state.results.push(this.format());
+    this.setState({});
   }
 
   resetList() {
@@ -73,12 +74,10 @@ class StopWatch extends React.Component {
   //     result: []
   //   };
   // }
+  resetOneElementOfTheList(index) {
 
-  resetOneElementOfTheList() {
-    this.state = {
-      result: []
-    }
   }
+
   render() {
     return (
       <div className={'App'}>
@@ -87,13 +86,13 @@ class StopWatch extends React.Component {
           <a href={'#'} className={'button'} id={'stop'} onClick={() => this.stop()}>Stop</a>
           <a href={'#'} className={'button'} id={'reset'} onClick={() => this.reset()}>Reset</a>
           <a href={'#'} className={'button'} id={'resetList'} onClick={() => this.resetList()}>Reset list</a>
-          <a href={'#'} className={'button'} id={"resetOneElementOfTheList"} onClick={() => this.resetOneElementOfTheList()}>ResetOne</a>
+          <a href={'#'} className={'button'} id={'resetOneElementOfTheList'} onClick={() => this.resetOneElementOfTheList(index)}>ResetOne</a>
         </nav>
         <div className={'stopwatch'}>
           {this.format(this.state.times)}
         </div>
         <ul className={'results'}>
-          
+          {this.state.results.map((element, index) => <li key={index}> {element} </li>)}
         </ul>
       </div>
     );

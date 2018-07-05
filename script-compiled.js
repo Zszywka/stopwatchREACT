@@ -94,8 +94,8 @@ var StopWatch = function (_React$Component) {
   }, {
     key: 'addList',
     value: function addList() {
-      // this.setState.push(this.times);
-      console.log(this.state.times);
+      this.state.results.push(this.format());
+      this.setState({});
     }
   }, {
     key: 'resetList',
@@ -113,11 +113,7 @@ var StopWatch = function (_React$Component) {
 
   }, {
     key: 'resetOneElementOfTheList',
-    value: function resetOneElementOfTheList() {
-      this.state = {
-        result: []
-      };
-    }
+    value: function resetOneElementOfTheList(index) {}
   }, {
     key: 'render',
     value: function render() {
@@ -159,8 +155,8 @@ var StopWatch = function (_React$Component) {
           ),
           React.createElement(
             'a',
-            { href: '#', className: 'button', id: "resetOneElementOfTheList", onClick: function onClick() {
-                return _this3.resetOneElementOfTheList();
+            { href: '#', className: 'button', id: 'resetOneElementOfTheList', onClick: function onClick() {
+                return _this3.resetOneElementOfTheList(index);
               } },
             'ResetOne'
           )
@@ -170,7 +166,19 @@ var StopWatch = function (_React$Component) {
           { className: 'stopwatch' },
           this.format(this.state.times)
         ),
-        React.createElement('ul', { className: 'results' })
+        React.createElement(
+          'ul',
+          { className: 'results' },
+          this.state.results.map(function (element, index) {
+            return React.createElement(
+              'li',
+              { key: index },
+              ' ',
+              element,
+              ' '
+            );
+          })
+        )
       );
     }
   }]);
