@@ -1,5 +1,6 @@
 class StopWatch extends React.Component {
   constructor(props) {
+    // line 4 -> download all functions from the parent
     super(props);
     this.state = {
       running: false,
@@ -8,6 +9,7 @@ class StopWatch extends React.Component {
         seconds: 0,
         miliseconds: 0
       },
+      // our times will be placed in the table
       results: []
     }
   }
@@ -25,7 +27,7 @@ class StopWatch extends React.Component {
     return `${pad0(this.state.times.minutes)}:${pad0(this.state.times.seconds)}:${pad0(Math.floor(this.state.times.miliseconds))}`;
   }
   start() {
-    if (!this.state.running) { //!this.state.running znaczy ze jest true?
+    if (!this.state.running) { //if (!false) => true (to do code)
       this.setState({
         running: true
       });
@@ -53,8 +55,8 @@ class StopWatch extends React.Component {
   stop() {
     if (this.state.running) {
       this.addList()
+    //lub this.addList(this.format(this.state.times))};
     };
-      // this.addToList(this.format(this.state.times))}; wtedy dziala
     this.state.running = false;
     clearInterval(this.watch);
   }
@@ -68,14 +70,9 @@ class StopWatch extends React.Component {
       results: []
     });
   }
-  // dlaczego nie:
-  // resetList() {
-  //   this.state = {
-  //     result: []
-  //   };
-  // }
+
   resetOneElementOfTheList() {
-    console.log(this.state.results);
+    // console.log(this.state.results);
     const res = this.state.results;
     res.pop();
     this.setState({results: res});

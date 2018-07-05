@@ -15,6 +15,8 @@ var StopWatch = function (_React$Component) {
     _classCallCheck(this, StopWatch);
 
     var _this = _possibleConstructorReturn(this, (StopWatch.__proto__ || Object.getPrototypeOf(StopWatch)).call(this, props));
+    // line 4 -> download all functions from the parent
+
 
     _this.state = {
       running: false,
@@ -23,6 +25,7 @@ var StopWatch = function (_React$Component) {
         seconds: 0,
         miliseconds: 0
       },
+      // our times will be placed in the table
       results: []
     };
     return _this;
@@ -50,7 +53,7 @@ var StopWatch = function (_React$Component) {
       var _this2 = this;
 
       if (!this.state.running) {
-        //!this.state.running znaczy ze jest true?
+        //if (!false) => true (to do code)
         this.setState({
           running: true
         });
@@ -86,8 +89,8 @@ var StopWatch = function (_React$Component) {
     value: function stop() {
       if (this.state.running) {
         this.addList();
+        //lub this.addList(this.format(this.state.times))};
       };
-      // this.addToList(this.format(this.state.times))}; wtedy dziala
       this.state.running = false;
       clearInterval(this.watch);
     }
@@ -104,17 +107,10 @@ var StopWatch = function (_React$Component) {
         results: []
       });
     }
-    // dlaczego nie:
-    // resetList() {
-    //   this.state = {
-    //     result: []
-    //   };
-    // }
-
   }, {
     key: 'resetOneElementOfTheList',
     value: function resetOneElementOfTheList() {
-      console.log(this.state.results);
+      // console.log(this.state.results);
       var res = this.state.results;
       res.pop();
       this.setState({ results: res });
