@@ -25,7 +25,7 @@ class StopWatch extends React.Component {
     return `${pad0(this.state.times.minutes)}:${pad0(this.state.times.seconds)}:${pad0(Math.floor(this.state.times.miliseconds))}`;
   }
   start() {
-    if (!this.state.running) { //!this.state.running znaczy ze jest true?
+    if (!this.state.running) {
       this.setState({
         running: true
       });
@@ -54,7 +54,7 @@ class StopWatch extends React.Component {
     if (this.state.running) {
       this.addList()
     };
-      // this.addToList(this.format(this.state.times))}; wtedy dziala
+      
     this.state.running = false;
     clearInterval(this.watch);
   }
@@ -68,12 +68,7 @@ class StopWatch extends React.Component {
       results: []
     });
   }
-  // dlaczego nie:
-  // resetList() {
-  //   this.state = {
-  //     result: []
-  //   };
-  // }
+
   resetOneElementOfTheList() {
     console.log(this.state.results);
     const res = this.state.results;
