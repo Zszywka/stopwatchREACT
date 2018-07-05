@@ -27,7 +27,11 @@ class StopWatch extends React.Component {
     return `${pad0(this.state.times.minutes)}:${pad0(this.state.times.seconds)}:${pad0(Math.floor(this.state.times.miliseconds))}`;
   }
   start() {
+<<<<<<< HEAD
     if (!this.state.running) { //if (!false) => true (to do code)
+=======
+    if (!this.state.running) {
+>>>>>>> 6b4867ec4529c1d6f19132ac3a1311f15b0f8c0e
       this.setState({
         running: true
       });
@@ -57,6 +61,10 @@ class StopWatch extends React.Component {
       this.addList()
     //lub this.addList(this.format(this.state.times))};
     };
+<<<<<<< HEAD
+=======
+      
+>>>>>>> 6b4867ec4529c1d6f19132ac3a1311f15b0f8c0e
     this.state.running = false;
     clearInterval(this.watch);
   }
